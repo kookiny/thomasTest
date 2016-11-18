@@ -34,6 +34,8 @@ public:
     ofImage btnOnePerson;
     ofImage btnTwoPeople;
     ofImage btnCamera;
+    ofImage btnBack;
+    
     int camWidth,camHeight;
     //----------FaceTracker---------------------
     ofxFaceTracker tracker;

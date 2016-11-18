@@ -2,7 +2,7 @@
 //  GuiApp.cpp
 //  ThomasAndFriends_faceSwap_Test_01
 //
-//  Created by Oscar David Bravo Peña on 11/15/16.
+//  Created by Oscar David Bravo Pe√±a on 11/15/16.
 //
 //
 
@@ -31,6 +31,7 @@ void GuiApp::setup(){
     btnOnePerson.load("thomas1.png");
     btnTwoPeople.load("thomas2.png");
     btnCamera.load("camera.png");
+    btnBack.load("back.png");
 
 }
 
@@ -70,6 +71,12 @@ void GuiApp::mousePressed(int x, int y, int button){
             logIn=false;
             onePerson=false;
         }
+    } else {
+       if (x < ofGetWidth()/5 && y < ofGetWidth()/5) {
+           onePerson=false;
+           logIn=true;
+           TwoPersons=false;
+       }
     }
 }
 
@@ -84,16 +91,16 @@ void GuiApp::logInScene(){
     ofBackground(120,200,255);
     ofSetColor(255);
     ofTrueTypeFont font;
-    font.load("Verdana.ttf", 18);
+    font.load("Arial.ttf", 18);
     font.drawString("Bienvenido \n\rescoja la cantidad de personas", 10, 50);
 //    ofDrawBitmapString("Bienvenido \n\r escoja la cantidad de personas", 0, 10);
     
 
-    font.load("Verdana.ttf", 12);
-    btnOnePerson.draw(0, ofGetHeight()/2 + 20,230,230);
-    font.drawString("una Persona  pulse aqui", 0 + 20, ofGetHeight()/2);
-    btnTwoPeople.draw(ofGetWidth()/2, ofGetHeight()/2 + 20 ,230,230);
-    font.drawString("dos Personas pulse aqui", ofGetWidth()/2 + 20, ofGetHeight()/2);
+    font.load("Arial.ttf", 12);
+    btnOnePerson.draw(0, ofGetHeight()/3 * 2 + 10,180,180);
+    font.drawString("una Persona pulse aqui", 0 + 5, ofGetHeight() / 3 * 2);
+    btnTwoPeople.draw(ofGetWidth()/2, ofGetHeight() / 3 * 2 + 10 ,180,180);
+    font.drawString("dos Personas pulse aqui", ofGetWidth()/2 + 5, ofGetHeight() / 3 * 2);
     
 }
 
@@ -101,14 +108,20 @@ void GuiApp::logInScene(){
 void GuiApp::onePersonScene(){
     ofBackground(0, 0, 0);
     ofSetColor(255);
+    
     //vidImg.load("something.jpg");
     vidImg.draw(0, 0);
+    
+    btnBack.draw(10, 10, 50, 50);
 }
 
 //--------------------------------------------------------------
 void GuiApp::twoPersonsScene(){
     ofBackground(128, 0, 0);
     ofSetColor(255);
+    
     vidImg.load("something.jpg");
     vidImg.draw(0, 0);
+    
+    btnBack.draw(10, 10, 50, 50);
 }
