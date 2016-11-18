@@ -9,7 +9,6 @@ void ofApp::setup(){
 void ofApp::update(){
     videoImg.load("vidImgBuffer.jpg");
     if (gui->logIn) {
-        cout<<"LogInScene";
     }
 }
 
