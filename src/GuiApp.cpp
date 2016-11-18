@@ -8,6 +8,7 @@
 
 #include "GuiApp.h"
 
+///Sam's Comment
 
 using namespace ofxCv;
 using namespace cv;
