@@ -30,6 +30,14 @@ public:
     bool logIn,onePerson,TwoPersons;
     //--------------Video-----------------------
     ofImage vidImg;
+    
+    ofImage btnOnePerson;
+    ofImage btnTwoPeople;
+    ofImage btnCamera;
+    int camWidth,camHeight;
+    //----------FaceTracker---------------------
+    ofxFaceTracker tracker;
+
 };
 
 #endif /* GuiApp_h */

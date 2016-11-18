@@ -17,7 +17,21 @@ void GuiApp::setup(){
     ofSetFullscreen(false);
     ofBackground(0);
     ofSetVerticalSync(false);
+
     vidImg.allocate(360, 640, OF_IMAGE_COLOR);
+
+    //-------------VIDEO----------------------------------------
+    camWidth  = 640;
+    camHeight = 480;
+
+    //------------TRACKER---------------------------------------
+    tracker.setup();
+    
+    //------------BUTTON---------------------------------------
+    btnOnePerson.load("thomas1.png");
+    btnTwoPeople.load("thomas2.png");
+    btnCamera.load("camera.png");
+
 }
 
 //--------------------------------------------------------------
@@ -67,11 +81,20 @@ void GuiApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void GuiApp::logInScene(){
-    ofBackground(0,0,128);
+    ofBackground(120,200,255);
     ofSetColor(255);
-    ofDrawBitmapString("Bienvenido \n\r escoja la cantidad de personas", 0, 10);
-    ofDrawBitmapString("una Persona", 0, ofGetHeight()/2);
-    ofDrawBitmapString("dos Personas", ofGetWidth()/2, ofGetHeight()/2);
+    ofTrueTypeFont font;
+    font.load("Verdana.ttf", 18);
+    font.drawString("Bienvenido \n\rescoja la cantidad de personas", 10, 50);
+//    ofDrawBitmapString("Bienvenido \n\r escoja la cantidad de personas", 0, 10);
+    
+
+    font.load("Verdana.ttf", 12);
+    btnOnePerson.draw(0, ofGetHeight()/2 + 20,230,230);
+    font.drawString("una Persona  pulse aqui", 0 + 20, ofGetHeight()/2);
+    btnTwoPeople.draw(ofGetWidth()/2, ofGetHeight()/2 + 20 ,230,230);
+    font.drawString("dos Personas pulse aqui", ofGetWidth()/2 + 20, ofGetHeight()/2);
+    
 }
 
 //--------------------------------------------------------------
