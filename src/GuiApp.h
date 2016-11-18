@@ -29,11 +29,7 @@ public:
     //------------Boolean Scenes----------------
     bool logIn,onePerson,TwoPersons;
     //--------------Video-----------------------
-    ofVideoGrabber vidGrabber;
     ofImage vidImg;
-    int camWidth,camHeight;
-    //----------FaceTracker---------------------
-    ofxFaceTracker tracker;
 };
 
 #endif /* GuiApp_h */

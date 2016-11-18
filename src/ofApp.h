@@ -20,4 +20,12 @@ public:
     
     //--------IMAGE----------
     ofImage videoImg;
+    //--------Video----------
+    ofVideoGrabber vidGrabber;
+    ofFbo fboFromVideo;
+    int camWidth,camHeight;
+    
+    //----------FaceTracker---------------------
+    ofxFaceTracker tracker;
+    ofPixels temporal,temporal2;
 };
