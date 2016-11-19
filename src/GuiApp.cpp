@@ -18,6 +18,8 @@ void GuiApp::setup(){
     ofBackground(0);
     ofSetVerticalSync(false);
 
+    // 1080 X 1920
+    
     vidImg.allocate(360, 640, OF_IMAGE_COLOR);
 
     //-------------VIDEO----------------------------------------
@@ -43,7 +45,11 @@ void GuiApp::update(){
 //--------------------------------------------------------------
 void GuiApp::draw(){
     if (logIn) {
-        logInScene();
+        if(DEBUG_MODE) {
+            logInScene_debug();
+        } else {
+            logInScene();
+        }
     }
     if (onePerson) {
         onePersonScene();
@@ -72,7 +78,7 @@ void GuiApp::mousePressed(int x, int y, int button){
             onePerson=false;
         }
     } else {
-       if (x < ofGetWidth()/5 && y < ofGetWidth()/5) {
+       if (x < ofGetWidth()/5 && y > ofGetWidth()/5) {
            onePerson=false;
            logIn=true;
            TwoPersons=false;
@@ -91,16 +97,35 @@ void GuiApp::logInScene(){
     ofBackground(120,200,255);
     ofSetColor(255);
     ofTrueTypeFont font;
-    font.load("Arial.ttf", 18);
-    font.drawString("Bienvenido \n\rescoja la cantidad de personas", 10, 50);
-//    ofDrawBitmapString("Bienvenido \n\r escoja la cantidad de personas", 0, 10);
+    font.load("Arial.ttf", 90);
+    font.drawString("Bienvenido", 30, 200);
+    font.load("Arial.ttf", 55);
+    font.drawString("rescoja la cantidad de personas", 30, 300);
+
     
 
-    font.load("Arial.ttf", 12);
-    btnOnePerson.draw(0, ofGetHeight()/3 * 2 + 10,180,180);
-    font.drawString("una Persona pulse aqui", 0 + 5, ofGetHeight() / 3 * 2);
-    btnTwoPeople.draw(ofGetWidth()/2, ofGetHeight() / 3 * 2 + 10 ,180,180);
-    font.drawString("dos Personas pulse aqui", ofGetWidth()/2 + 5, ofGetHeight() / 3 * 2);
+    font.load("Arial.ttf", 30);
+    btnOnePerson.draw(0, ofGetHeight()/3 * 2 + 20 ,ofGetWidth()/2-30,ofGetWidth()/2-30);
+    font.drawString("una Persona pulse aqui", 0 + 50, ofGetHeight() / 3 * 2);
+    btnTwoPeople.draw(ofGetWidth()/2, ofGetHeight() / 3 * 2 + 20,ofGetWidth()/2-30,ofGetWidth()/2-30);
+    font.drawString("dos Personas pulse aqui", ofGetWidth()/2 + 50, ofGetHeight() / 3 * 2);
+    
+}
+
+void GuiApp::logInScene_debug(){
+    ofBackground(120,200,255);
+    ofSetColor(255);
+    ofTrueTypeFont font;
+    font.load("Arial.ttf", 18);
+    font.drawString("Bienvenido \n\rescoja la cantidad de personas", 10, 50);
+    //    ofDrawBitmapString("Bienvenido \n\r escoja la cantidad de personas", 0, 10);
+    
+    
+    font.load("Arial.ttf", 13);
+    btnOnePerson.draw(0, ofGetHeight()/3 * 2 - 10 ,ofGetWidth()/2-10,ofGetWidth()/2-10);
+    font.drawString("una Persona pulse aqui", 0 + 10, ofGetHeight() / 3 * 2 - 20);
+    btnTwoPeople.draw(ofGetWidth()/2, ofGetHeight() / 3 * 2 - 10 ,ofGetWidth()/2-10,ofGetWidth()/2-10);
+    font.drawString("dos Personas pulse aqui", ofGetWidth()/2 + 10, ofGetHeight() / 3 * 2 - 20);
     
 }
 
@@ -112,7 +137,7 @@ void GuiApp::onePersonScene(){
     //vidImg.load("something.jpg");
     vidImg.draw(0, 0);
     
-    btnBack.draw(10, 10, 50, 50);
+   btnBack.draw(10, ofGetHeight() - 50 - ofGetWidth()/5, ofGetWidth()/5, ofGetWidth()/5);
 }
 
 //--------------------------------------------------------------
@@ -123,5 +148,5 @@ void GuiApp::twoPersonsScene(){
     vidImg.load("something.jpg");
     vidImg.draw(0, 0);
     
-    btnBack.draw(10, 10, 50, 50);
+    btnBack.draw(10, ofGetHeight() - 50 - ofGetWidth()/5, ofGetWidth()/5, ofGetWidth()/5);
 }

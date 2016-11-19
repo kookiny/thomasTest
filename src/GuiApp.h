@@ -14,6 +14,14 @@
 #include "ofxCv.h"
 #include "ofxFacetracker.h"
 
+//////////////////////////////
+// For size of screen
+// if you want to show in a small window fits to small monitor DEBUG_MODE 1
+// if you want to show in a big window fits to big TV DEBUG_MODE 0
+//////////////////////////////
+
+#define DEBUG_MODE 0
+
 class GuiApp: public ofBaseApp {
 public:
     void setup();
@@ -24,6 +32,7 @@ public:
     void mousePressed(int x, int y , int button);
     //-----------------Scenes-------------------
     void logInScene();
+    void logInScene_debug();
     void onePersonScene();
     void twoPersonsScene();
     //------------Boolean Scenes----------------
