@@ -17,15 +17,27 @@ public:
     
     //-------------------GUI--------------------
     shared_ptr<GuiApp> gui;
-   
     //--------Video----------
     ofVideoGrabber vidGrabber;
     int camWidth,camHeight;
     //----------FaceTracker---------------------
     ofxFaceTracker tracker;
-    ofPixels temporal,temporal2;
+    ofPixels temporal;
     ofVec2f facePosition;
+    ofImage imageMask;
+    ofImage image, imageBlur;
     //----------shaders-------------------------
     ofShader shader;
     ofImage videoImg;
+    void maskedBlur(ofImage& tex, ofImage& mask, ofImage& result);
+    
+    ofImage src, thomas, mask;
+    ofImage srcBlur, thomasBlur;
+    cv::Mat dist, sum;
+    ofShader cloneShader;
+    float multiplier;
+    
+    void onePersonProcess();
+    void twoPersonsProcess();
+    
 };

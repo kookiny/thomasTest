@@ -123,7 +123,7 @@ void GuiApp::onePersonScene(){
     ofBackground(0, 0, 0);
     ofSetColor(255);
     
-    //vidImg.load("something.jpg");
+    vidImg.load("souvenirPicture.jpg");
     vidImg.draw(0, 0);
     
    btnBack.draw(10, ofGetHeight() - 50 - ofGetWidth()/5, ofGetWidth()/5, ofGetWidth()/5);
@@ -134,7 +134,7 @@ void GuiApp::twoPersonsScene(){
     ofBackground(128, 0, 0);
     ofSetColor(255);
     
-    vidImg.load("something.jpg");
+    vidImg.load("souvenirPicture.jpg");
     vidImg.draw(0, 0);
     
     btnBack.draw(10, ofGetHeight() - 50 - ofGetWidth()/5, ofGetWidth()/5, ofGetWidth()/5);

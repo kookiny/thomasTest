@@ -20,7 +20,7 @@
 // if you want to show in a big window fits to big TV DEBUG_MODE 0
 //////////////////////////////
 
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 class GuiApp: public ofBaseApp {
 public:

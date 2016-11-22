@@ -21,7 +21,7 @@ int main( ){
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
     
     if(DEBUG_MODE){
-        settings.width = 480;
+        settings.width = 320;
         settings.height = 640;
     } else {
         settings.width = 1080;
