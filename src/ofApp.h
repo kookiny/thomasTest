@@ -17,15 +17,15 @@ public:
     
     //-------------------GUI--------------------
     shared_ptr<GuiApp> gui;
-    
-    //--------IMAGE----------
-    ofImage videoImg;
+   
     //--------Video----------
     ofVideoGrabber vidGrabber;
-    ofFbo fboFromVideo;
     int camWidth,camHeight;
-    
     //----------FaceTracker---------------------
     ofxFaceTracker tracker;
     ofPixels temporal,temporal2;
+    ofVec2f facePosition;
+    //----------shaders-------------------------
+    ofShader shader;
+    ofImage videoImg;
 };

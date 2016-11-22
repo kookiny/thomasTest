@@ -8,7 +8,6 @@
 
 #include "GuiApp.h"
 
-///Sam's Comment
 //--------------------------------------------------------------
 void GuiApp::setup(){
     logIn=true;
@@ -19,13 +18,6 @@ void GuiApp::setup(){
     ofSetVerticalSync(false);
 
     vidImg.allocate(360, 640, OF_IMAGE_COLOR);
-
-    //-------------VIDEO----------------------------------------
-    camWidth  = 640;
-    camHeight = 480;
-
-    //------------TRACKER---------------------------------------
-    tracker.setup();
     
     //------------BUTTON---------------------------------------
     btnOnePerson.load("thomas1.png");
@@ -73,7 +65,6 @@ void GuiApp::mousePressed(int x, int y, int button){
     }
 }
 
-// Oscar comment
 //--------------------------------------------------------------
 void GuiApp::keyPressed(int key){
     
@@ -86,8 +77,6 @@ void GuiApp::logInScene(){
     ofTrueTypeFont font;
     font.load("Verdana.ttf", 18);
     font.drawString("Bienvenido \n\rescoja la cantidad de personas", 10, 50);
-//    ofDrawBitmapString("Bienvenido \n\r escoja la cantidad de personas", 0, 10);
-    
 
     font.load("Verdana.ttf", 12);
     btnOnePerson.draw(0, ofGetHeight()/2 + 20,230,230);
@@ -101,8 +90,8 @@ void GuiApp::logInScene(){
 void GuiApp::onePersonScene(){
     ofBackground(0, 0, 0);
     ofSetColor(255);
-    //vidImg.load("something.jpg");
-    vidImg.draw(0, 0);
+    vidImg.load("something.jpg");
+    vidImg.draw(0,0);
 }
 
 //--------------------------------------------------------------
