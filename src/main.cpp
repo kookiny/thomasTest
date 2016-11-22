@@ -20,8 +20,14 @@ int main( ){
     settings.resizable = true;
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
     
-    settings.width = 360;
-    settings.height = 640;
+    if(DEBUG_MODE){
+        settings.width = 480;
+        settings.height = 640;
+    } else {
+        settings.width = 1080;
+        settings.height = 1920;
+    }
+    
     settings.setPosition(ofVec2f(0,0));
     settings.resizable = false;
     shared_ptr<ofAppBaseWindow> guiWindow = ofCreateWindow(settings);
